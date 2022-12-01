@@ -45,7 +45,7 @@ class Puzzle01Resource {
 
 data class ElfCalories(
     val calories: List<Int>,
-    val totalCalories: Long = calories.map { it.toLong() }.sum(),
+    val totalCalories: Long = calories.sumOf { it.toLong() },
 ) {
 }
 
