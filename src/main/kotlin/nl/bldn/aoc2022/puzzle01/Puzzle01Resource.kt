@@ -43,7 +43,7 @@ class Puzzle01Resource {
     }
 }
 
-data class ElfCalories(
+private data class ElfCalories(
     val calories: List<Int>,
     val totalCalories: Long = calories.sumOf { it.toLong() },
 ) {
