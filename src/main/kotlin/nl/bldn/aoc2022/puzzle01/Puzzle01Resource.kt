@@ -27,20 +27,21 @@ class Puzzle01Resource {
             .map { ElfCalories(it.map { s -> s.toInt() }) }
     }
 
-    private fun List<String>.slices(slicesSeparator: (String) -> Boolean):List<List<String>> {
-        val result = mutableListOf<List<String>>()
-        var current = mutableListOf<String>()
-        for (s in this) {
-            if (slicesSeparator(s)) {
-                result.add(current)
-                current = mutableListOf()
-                continue
-            }
-
-            current.add(s)
+}
+fun List<String>.slices(slicesSeparator: (String) -> Boolean):List<List<String>> {
+    val result = mutableListOf<List<String>>()
+    var current = mutableListOf<String>()
+    for (s in this) {
+        if (slicesSeparator(s)) {
+            result.add(current)
+            current = mutableListOf()
+            continue
         }
-        return result
+
+        current.add(s)
     }
+    result.add(current)
+    return result
 }
 
 private data class ElfCalories(
