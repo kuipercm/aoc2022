@@ -16,7 +16,6 @@ class Puzzle04Resource {
         input: String,
     ): Int {
         val elfPairs = input.convertToPuzzleInput()
-        elfPairs.forEach { logger.info { "$it - overlaps: ${it.overlap()} - ${it.first.toList()}" } }
 
 //        return elfPairs.count { it.fullContainment() }
         // Part 1: 453
